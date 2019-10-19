@@ -1,0 +1,1 @@
+add_executable(2d_array 2d_array.cpp)

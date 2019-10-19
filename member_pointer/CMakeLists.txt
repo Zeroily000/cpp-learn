@@ -1,0 +1,1 @@
+add_executable(member_pointer member_pointer.cpp)
