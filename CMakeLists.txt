@@ -14,3 +14,5 @@ add_subdirectory(singleton)
 add_subdirectory(std_functional)
 add_subdirectory(std_bind)
 add_subdirectory(member_pointer)
+
+add_subdirectory(binary_search)
