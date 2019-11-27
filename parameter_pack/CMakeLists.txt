@@ -1,0 +1,1 @@
+add_executable(parameter_pack parameter_pack.cpp)
