@@ -1,0 +1,1 @@
+add_executable(std_ostream std_ostream.cpp)
