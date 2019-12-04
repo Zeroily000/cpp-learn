@@ -12,12 +12,12 @@
  *       for a type but is instead replaced by a value. A non-type parameter can be any of the following:
  *       std::nullptr_t, integral type, pointer type, pointer to member type, enumeration type.
  */
-template <typename T, std::enable_if_t<std::is_integral<std::decay_t<T>>::value, std::nullptr_t> = nullptr>
+template <typename T, std::enable_if_t<std::is_integral<T>::value, std::nullptr_t> = nullptr>
 void foo(T t) {
     std::cout << "Type of t is " << boost::core::demangle(typeid(T).name()) << std::endl;
 }
 
-template <typename T, std::enable_if_t<std::is_floating_point<std::decay_t<T>>::value, std::nullptr_t> = nullptr>
+template <typename T, std::enable_if_t<std::is_floating_point<T>::value, std::nullptr_t> = nullptr>
 void foo(T t) {
     std::cout << "Type of t is " << boost::core::demangle(typeid(T).name()) << std::endl;
 }
