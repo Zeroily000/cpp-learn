@@ -17,5 +17,5 @@ add_subdirectory(member_pointer)
 add_subdirectory(lambda_function)
 add_subdirectory(parameter_pack)
 add_subdirectory(std_ostream)
-
 add_subdirectory(binary_search)
+add_subdirectory(boost_python)
