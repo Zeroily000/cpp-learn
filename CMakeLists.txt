@@ -3,6 +3,9 @@ project(cpp_learn)
 
 set(CMAKE_CXX_STANDARD 14)
 
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+
 add_subdirectory(2d_array)
 add_subdirectory(double_pointer)
 add_subdirectory(unprotected)

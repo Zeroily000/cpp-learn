@@ -1,7 +1,11 @@
 #include "gtest/gtest.h"
 
+void foo() {
+    assert(false);
+}
+
 TEST(sample_test_name, sample_test) {
-    ASSERT_EQ(1, 1);
+    ASSERT_DEATH(foo(), "");
 }
 
 int main(int argc, char** argv) {
