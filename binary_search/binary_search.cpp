@@ -2,7 +2,7 @@
 #include "gtest/gtest.h"
 
 template <typename T>
-int findLeft(std::vector<T> const & nums, T const target) {
+std::size_t findLeft(std::vector<T> const & nums, T const target) {
     std::size_t lo{0}, hi{nums.size()-1};
     while (lo < hi) {
         std::size_t mi{lo + (hi - lo)/2};
@@ -13,7 +13,7 @@ int findLeft(std::vector<T> const & nums, T const target) {
 }
 
 template <typename T>
-int findRight(std::vector<T> const & nums, T const target) {
+std::size_t findRight(std::vector<T> const & nums, T const target) {
     std::size_t lo{0}, hi{nums.size()-1};
     while (lo < hi) {
         std::size_t mi{lo + (hi - lo + 1)/2};

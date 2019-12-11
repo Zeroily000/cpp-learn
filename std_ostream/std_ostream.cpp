@@ -1,8 +1,10 @@
 #include <iostream>
 #include <type_traits>
+#include <algorithm>
+#include <iterator>
 #include <vector>
 
-
+// Forward declaration
 template <typename T, std::enable_if_t<std::is_arithmetic<T>::value, std::nullptr_t> = nullptr>
 class Vector;
 
@@ -40,9 +42,7 @@ private:
 
 template <typename T>
 std::ostream& operator<<(std::ostream& os, Vector<T> const & vec) {
-    for (T const & v : vec.m_data) {
-        os << v << ' ';
-    }
+    std::copy(vec.m_data.begin(), vec.m_data.end(), std::ostream_iterator<int>(os, " "));
     return os;
 }
 

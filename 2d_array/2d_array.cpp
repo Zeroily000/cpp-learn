@@ -1,12 +1,11 @@
+#include <iostream>
+#include "gtest/gtest.h"
 /**
  * @note Mutidimensional arrays are not multi-pointer. This line of code is incorrect:
  *       int **ptr = (int**)matrix;
  *       When arrays are passed to functions, they decay to pointers to their first element.
  *       For a 2d array, this would be int (*)[cols].
  */
-#include <iostream>
-#include "gtest/gtest.h"
-
 template <typename T, std::size_t length>
 void printVector(T const * const vec) {
     for (std::size_t i{0}; i < length; ++i)

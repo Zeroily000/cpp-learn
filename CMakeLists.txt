@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(cpp_learn)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
@@ -23,3 +23,4 @@ add_subdirectory(std_ostream)
 add_subdirectory(binary_search)
 add_subdirectory(python_binding)
 add_subdirectory(unit_test)
+add_subdirectory(template_template)
