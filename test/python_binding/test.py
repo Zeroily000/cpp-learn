@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import unittest
 
+# Add <BUILD_DIR>/python to the PYTHONPATH
 import cppLearnPyLib
 
 
