@@ -7,6 +7,7 @@
 
 //#include <cstddef> // std::size_t
 #include <iostream>
+#include <vector>
 
 class CppLearn {
 public:
@@ -32,6 +33,27 @@ public:
         }
     }
 
+    template<typename T>
+    static std::size_t findLeft(std::vector<T> const & nums, T&& target) {
+        std::size_t lo{0}, hi{nums.size()-1};
+        while (lo < hi) {
+            std::size_t mi{lo + (hi - lo)/2};
+            if (target > nums[mi]) lo = mi + 1;
+            else hi = mi;
+        }
+        return lo;
+    }
+
+    template<typename T>
+    static std::size_t findRight(std::vector<T> const & nums, T&& target) {
+        std::size_t lo{0}, hi{nums.size()-1};
+        while (lo < hi) {
+            std::size_t mi{lo + (hi - lo + 1)/2};
+            if (target < nums[mi]) hi = mi - 1;
+            else lo = mi;
+        }
+        return lo;
+    }
 
 private:
 };

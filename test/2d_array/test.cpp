@@ -1,5 +1,5 @@
-#include "cpp-learn.hpp"
 #include <gtest/gtest.h>
+#include "cpp-learn.hpp"
 
 /**
  * @note Multidimensional arrays are not multi-pointer, e.g. int** is not equal to int[][].
