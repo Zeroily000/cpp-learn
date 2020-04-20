@@ -32,8 +32,10 @@ public:
     }
 
     SharedPtr& operator=(SharedPtr const & other) {
-        data_ptr=other.data_ptr;
-        ++data_ptr->ref;
+        if (this != &other) {
+            data_ptr=other.data_ptr;
+            ++data_ptr->ref;
+        }
     }
     // Move assignment operators should be marked noexcept
     SharedPtr& operator=(SharedPtr && other) noexcept {

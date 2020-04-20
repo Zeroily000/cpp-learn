@@ -1,7 +1,3 @@
-//
-// Created by andy on 4/19/20.
-//
-
 #ifndef CPP_LEARN_HPP
 #define CPP_LEARN_HPP
 
@@ -11,6 +7,15 @@
 
 class CppLearn {
 public:
+    CppLearn();
+    ~CppLearn();
+
+    CppLearn(CppLearn const & other);
+    CppLearn(CppLearn && other) noexcept;
+
+    CppLearn & operator=(CppLearn const & other);
+    CppLearn & operator=(CppLearn && other) noexcept;
+
     template<typename T, std::size_t COLS>
     static void print2dArray(T const * const arr) {
         std::cout << "Print 2d array as T const * const" << std::endl;
@@ -58,6 +63,4 @@ public:
 private:
 };
 
-#endif //CPP_LEARN_CPP_LEARN_HPP
-
-//std::size_t const ROWS{sizeof(arr)/sizeof(arr[0])}, COLS{sizeof(arr[0])/ROWS};
+#endif //CPP_LEARN_HPP

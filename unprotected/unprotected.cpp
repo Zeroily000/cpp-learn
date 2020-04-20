@@ -13,7 +13,7 @@ public:
     friend D;
 };
 
-class --heBase {
+class Base {
 public:
     std::string const public_string{"public string"};
 

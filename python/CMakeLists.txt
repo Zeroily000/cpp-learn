@@ -1,6 +1,7 @@
 find_package(pybind11 REQUIRED)
+message("pybind11_VERSION: ${pybind11_VERSION}")
 
-set(PYBIND11_CPP_STANDARD -std=c++14)
+set(PYBIND11_CPP_STANDARD -std=c++1z)
 
 pybind11_add_module(cppLearnPyLib wrapper.cpp)
 target_include_directories(cppLearnPyLib PRIVATE ${PROJECT_SOURCE_DIR}/src)
