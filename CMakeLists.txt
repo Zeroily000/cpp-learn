@@ -8,7 +8,6 @@ set(CMAKE_C_COMPILER /usr/bin/gcc-8)
 
 #include_directories(${GTEST_INCLUDE_DIRS})
 
-add_subdirectory(2d_array)
 add_subdirectory(double_pointer)
 add_subdirectory(unprotected)
 
