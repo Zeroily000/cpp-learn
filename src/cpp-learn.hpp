@@ -60,6 +60,16 @@ public:
         return lo;
     }
 
+
+#if __cplusplus >= 201703L
+    template<template<typename, typename> typename Container, typename T, typename Allocator = std::allocator<T>>
+#else
+    template<template<typename, typename> class Container, typename T, typename Allocator = std::allocator<T>>
+#endif
+    static typename Container<T, Allocator>::iterator beginItr(Container<T, Allocator> c) {
+        return c.begin();
+    }
+
 private:
 };
 
