@@ -1,7 +1,7 @@
 #include <iostream>
 #include <type_traits>
-#include "boost/core/demangle.hpp"
-#include "gtest/gtest.h"
+#include <boost/core/demangle.hpp>
+#include <gtest/gtest.h>
 
 typedef unsigned long ulong;
 

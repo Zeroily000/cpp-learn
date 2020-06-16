@@ -9,7 +9,7 @@
  *       ...
  */
 
-TEST(ND_ARRAY, 2d_array) {
+TEST(CPP_LEARN, nd_array) {
     std::size_t constexpr M{2}, N{3};
     int constexpr arr[M][N] = {{1,2,3}, {4,5,6}};
     CppLearn::print2dArray<int, N>((int *)arr);
