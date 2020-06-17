@@ -5,6 +5,7 @@ namespace cpplearn {
 
 class Base {
 public:
+    Base();
     virtual ~Base();
 };
 }

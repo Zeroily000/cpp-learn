@@ -7,7 +7,9 @@ Derived & Derived::getInstance() {
     return instance;
 }
 
-Derived::Derived() : Base() {}
+Derived::Derived() : Base() {
+    std::cout << "Constructing Derived" << std::endl;
+}
 Derived::~Derived() {
     std::cout << "Destructing Derived" << std::endl;
 }
