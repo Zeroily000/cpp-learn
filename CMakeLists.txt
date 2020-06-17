@@ -10,7 +10,6 @@ add_subdirectory(std_functional)
 add_subdirectory(std_bind)
 add_subdirectory(member_pointer)
 add_subdirectory(lambda_function)
-add_subdirectory(parameter_pack)
 add_subdirectory(std_ostream)
 add_subdirectory(std_equal_range)
 
