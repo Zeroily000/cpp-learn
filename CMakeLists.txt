@@ -3,11 +3,6 @@ project(cpp_learn)
 
 set(CMAKE_CXX_STANDARD 17)
 
-#include_directories(${GTEST_INCLUDE_DIRS})
-
-add_subdirectory(double_pointer)
-add_subdirectory(unprotected)
-
 add_subdirectory(alias)
 add_subdirectory(template_function)
 add_subdirectory(function_pointer)
