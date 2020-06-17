@@ -16,14 +16,14 @@ namespace cpplearn {
 
 class Derived : public Base {
 public:
-    Derived();
+    static Derived & getInstance();
     ~Derived() override;
 
-    Derived(Derived const & other);
-    Derived(Derived && other) noexcept;
+    Derived(Derived const & other) = delete;
+    Derived(Derived && other) noexcept = delete;
 
-    Derived & operator=(Derived const & other);
-    Derived & operator=(Derived && other) noexcept;
+    Derived & operator=(Derived const & other) = delete;
+    Derived & operator=(Derived && other) noexcept = delete;
 
     template<typename T, std::size_t COLS>
     static void print2dArray(T const * const arr) {
@@ -80,6 +80,7 @@ public:
     }
 
 private:
+    Derived();
 };
 }
 #endif //CPP_LEARN_HPP
