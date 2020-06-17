@@ -1,2 +1,3 @@
 add_library(cppLearnLib STATIC
-    cpp-learn.cpp)
+        base.cpp
+        derived.cpp)

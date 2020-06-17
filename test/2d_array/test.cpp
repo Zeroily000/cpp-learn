@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "cpp-learn.hpp"
+#include "derived.hpp"
 
 /**
  * @note Multidimensional arrays are not multi-pointer, e.g. int** is not equal to int[][].
@@ -12,8 +12,8 @@
 TEST(CPP_LEARN, nd_array) {
     std::size_t constexpr M{2}, N{3};
     int constexpr arr[M][N] = {{1,2,3}, {4,5,6}};
-    CppLearn::print2dArray<int, N>((int *)arr);
-    CppLearn::print2dArray<int, M>(arr);
+    cpplearn::Derived::print2dArray<int, N>((int *)arr);
+    cpplearn::Derived::print2dArray<int, M>(arr);
     SUCCEED();
 }
 

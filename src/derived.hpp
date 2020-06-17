@@ -1,26 +1,29 @@
-#ifndef CPP_LEARN_HPP
-#define CPP_LEARN_HPP
+#ifndef DERIVED_HPP
+#define DERIVED_HPP
 
 //#include <cstddef> // std::size_t
 #include <iostream>
 #include <vector>
 
+#include "base.hpp"
 
 #define F abc
 #define B def
 #define FB(arg) #arg
 #define FB1(arg) FB(arg)
 
-class CppLearn {
+namespace cpplearn {
+
+class Derived : public Base {
 public:
-    CppLearn();
-    ~CppLearn();
+    Derived();
+    ~Derived() override;
 
-    CppLearn(CppLearn const & other);
-    CppLearn(CppLearn && other) noexcept;
+    Derived(Derived const & other);
+    Derived(Derived && other) noexcept;
 
-    CppLearn & operator=(CppLearn const & other);
-    CppLearn & operator=(CppLearn && other) noexcept;
+    Derived & operator=(Derived const & other);
+    Derived & operator=(Derived && other) noexcept;
 
     template<typename T, std::size_t COLS>
     static void print2dArray(T const * const arr) {
@@ -78,5 +81,5 @@ public:
 
 private:
 };
-
+}
 #endif //CPP_LEARN_HPP

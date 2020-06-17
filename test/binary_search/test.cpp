@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "cpp-learn.hpp"
+#include "derived.hpp"
 
 
 class BinarySearchTest : public ::testing::Test {
@@ -11,13 +11,13 @@ protected:
 };
 
 TEST_F(BinarySearchTest, find_existing_element) {
-    ASSERT_EQ(CppLearn::findLeft(nums, 4), 3);
-    ASSERT_EQ(CppLearn::findRight(nums, 4), 5);
+    ASSERT_EQ(cpplearn::Derived::findLeft(nums, 4), 3);
+    ASSERT_EQ(cpplearn::Derived::findRight(nums, 4), 5);
 }
 
 TEST_F(BinarySearchTest, find_nonexisting_element) {
-    ASSERT_EQ(CppLearn::findLeft(nums, 5), 6);
-    ASSERT_EQ(CppLearn::findRight(nums, 3), 2);
+    ASSERT_EQ(cpplearn::Derived::findLeft(nums, 5), 6);
+    ASSERT_EQ(cpplearn::Derived::findRight(nums, 3), 2);
 }
 
 int main(int argc, char ** argv) {

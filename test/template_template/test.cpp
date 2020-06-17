@@ -1,7 +1,7 @@
 #include <type_traits> // std::is_same
 #include <gtest/gtest.h>
 
-#include "cpp-learn.hpp"
+#include "derived.hpp"
 
 /**
  * @note typename and class are interchangeable in the basic case of specifying a template.
@@ -19,8 +19,8 @@
 
 TEST(TEMPLATE_TEMPLATE, template_template) {
     std::vector<int> v;
-    ASSERT_TRUE((std::is_same<std::vector<int>::iterator, decltype(CppLearn::beginItr(v))>::value));
-    ASSERT_EQ(v.begin(), CppLearn::beginItr(v));
+    ASSERT_TRUE((std::is_same<std::vector<int>::iterator, decltype(cpplearn::Derived::beginItr(v))>::value));
+    ASSERT_EQ(v.begin(), cpplearn::Derived::beginItr(v));
 }
 
 int main(int argc, char ** argv) {
