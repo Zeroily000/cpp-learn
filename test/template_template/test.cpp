@@ -19,8 +19,8 @@
 
 TEST(TEMPLATE_TEMPLATE, template_template) {
     std::vector<int> v;
-    ASSERT_TRUE((std::is_same<std::vector<int>::iterator, decltype(cpplearn::Derived::beginItr(v))>::value));
-    ASSERT_EQ(v.begin(), cpplearn::Derived::beginItr(v));
+    ASSERT_TRUE((std::is_same<std::vector<int>::iterator, decltype(cpplearn::Derived<int>::beginItr(v))>::value));
+    ASSERT_EQ(v.begin(), cpplearn::Derived<int>::beginItr(v));
 }
 
 int main(int argc, char ** argv) {
