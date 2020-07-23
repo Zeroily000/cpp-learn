@@ -1,5 +1,3 @@
-find_package(GTest REQUIRED)
-
 add_executable(test_2d-array test.cpp)
 
 target_include_directories(test_2d-array PRIVATE
