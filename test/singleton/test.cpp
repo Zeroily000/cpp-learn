@@ -3,8 +3,8 @@
 
 
 TEST(CPPLEARN, singleton) {
-    cpplearn::Derived<int> const * const dptr1{&cpplearn::Derived<int>::getInstance()};
-    cpplearn::Derived<int> const * const dptr2{&cpplearn::Derived<int>::getInstance()};
+    cpplearn::Derived const * const dptr1{&cpplearn::Derived::getInstance()};
+    cpplearn::Derived const * const dptr2{&cpplearn::Derived::getInstance()};
     ASSERT_EQ(dptr1, dptr2);
 }
 

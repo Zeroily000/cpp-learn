@@ -14,25 +14,21 @@
 
 namespace cpplearn {
 
-template<typename T>
+
 class Derived : public Base {
 public:
-    static Derived & getInstance() {
-        static Derived instance{Derived()};
-        return instance;
-    }
-    ~Derived() override {
-        std::cout << "Destructing Derived" << std::endl;
-    }
+    ~Derived() override;
 
-
+    // Deleted definition must be first declaration
     Derived(Derived const & other) = delete;
     Derived(Derived && other) noexcept = delete;
 
     Derived & operator=(Derived const & other) = delete;
     Derived & operator=(Derived && other) noexcept = delete;
 
-    template<std::size_t COLS>
+    static Derived & getInstance();
+
+    template<typename T, std::size_t COLS>
     static void print2dArray(T const * const arr) {
         std::cout << "Print 2d array as T const * const" << std::endl;
         for (std::size_t i{0}; i < sizeof(arr)/sizeof(*arr); ++i) {
@@ -43,7 +39,7 @@ public:
         }
     }
 
-    template<std::size_t ROWS, std::size_t COLS>
+    template<typename T, std::size_t ROWS, std::size_t COLS>
     static void print2dArray(T const (* const arr)[COLS]) {
         std::cout << "Print 2d array as T(*)[COLS]" << std::endl;
         for (std::size_t i{0}; i < ROWS; ++i) {
@@ -54,6 +50,7 @@ public:
         }
     }
 
+    template<typename T>
     static std::size_t findLeft(std::vector<T> const & nums, T&& target) {
         std::size_t lo{0}, hi{nums.size()-1};
         while (lo < hi) {
@@ -64,6 +61,7 @@ public:
         return lo;
     }
 
+    template<typename T>
     static std::size_t findRight(std::vector<T> const & nums, T&& target) {
         std::size_t lo{0}, hi{nums.size()-1};
         while (lo < hi) {
@@ -76,18 +74,17 @@ public:
 
 
 #if __cplusplus >= 201703L
-    template<template<typename, typename> typename Container, typename Allocator = std::allocator<T>>
+    template<typename T, template<typename, typename> typename Container, typename Allocator = std::allocator<T>>
 #else
-    template<template<typename, typename> class Container, typename T, typename Allocator = std::allocator<T>>
+    template<typename T, template<typename, typename> class Container, typename T, typename Allocator = std::allocator<T>>
 #endif
     static typename Container<T, Allocator>::iterator beginItr(Container<T, Allocator> c) {
         return c.begin();
     }
 
 private:
-    Derived() : Base() {
-        std::cout << "Constructing Derived" << std::endl;
-    }
+    Derived();
 };
+
 }
-#endif //CPP_LEARN_HPP
+#endif //DERIVED_HPP
