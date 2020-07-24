@@ -1,5 +1,3 @@
-find_package(GTest REQUIRED)
-
 add_executable(test_binary-search test.cpp)
 
 target_include_directories(test_binary-search PRIVATE

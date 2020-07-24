@@ -16,4 +16,6 @@ import cppLearnPyLib
 if __name__ == '__main__':
     print(cppLearnPyLib.the_answer)
     print(cppLearnPyLib.what)
+    base = cppLearnPyLib.Base()
+    print(base.getProtectedString())
     # unittest.main()
