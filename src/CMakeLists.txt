@@ -1,3 +1,3 @@
-add_library(cppLearnLib STATIC
+add_library(cppLearnLib SHARED
         base.cpp
         derived.cpp)

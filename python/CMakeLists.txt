@@ -11,10 +11,6 @@ set_target_properties(cppLearnPyLib PROPERTIES
         SUFFIX "${PYTHON_MODULE_EXTENSION}"
 )
 
-# In order to link the static library cppLearnLib. No need for shared libraries
-set_target_properties(cppLearnLib PROPERTIES POSITION_INDEPENDENT_CODE TRUE)
-
-
 ## Setup Clion for debug
 # target: <PYTHON-LIBRARY>
 # executable: <PYTHON>
