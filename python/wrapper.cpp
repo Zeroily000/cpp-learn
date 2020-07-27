@@ -18,8 +18,6 @@ PYBIND11_MODULE(cppLearnPyLib, m) {
             .def_readwrite("m_public_string", &cpplearn::Base::m_public_string)
             .def("getProtectedString", &cpplearn::Base::getProtectedString);
 
-    py::class_<cpplearn::Derived, cpplearn::Base, std::unique_ptr<cpplearn::Derived, py::nodelete>>(m, "Derived")
-            .def(py::init([](){
-                return std::unique_ptr<cpplearn::Derived, py::nodelete>(&cpplearn::Derived::getInstance());
-            }));
+    py::class_<cpplearn::Derived, cpplearn::Base>(m, "Derived")
+            .def_static("getInstance", &cpplearn::Derived::getInstance, py::return_value_policy::reference);
 }

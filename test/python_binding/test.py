@@ -5,19 +5,24 @@ import unittest
 import cppLearnPyLib
 
 
-# class TestCppLearn(unittest.TestCase):
-#     def testBinarySearch(self):
-#         nums = [0,1,2,4,4,4,6]
-#         self.assertEqual(cppLearnPyLib.CppLearn().findLeft(nums, 4), 3)
-#         self.assertEqual(cppLearnPyLib.CppLearn().findRight(nums, 4), 5)
-#         self.assertEqual(cppLearnPyLib.CppLearn.findLeft(nums, 5), 6)
-#         self.assertEqual(cppLearnPyLib.CppLearn.findRight(nums, 3), 2)
+class TestCppLearn(unittest.TestCase):
+    def setUp(self):
+        self.base = cppLearnPyLib.Base()
+        self.derived = cppLearnPyLib.Derived.getInstance()
+
+
+    def testInheritance(self):
+        self.assertEqual(self.base.m_public_string, self.derived.m_public_string)
+        self.assertEqual(self.base.getProtectedString(), self.derived.getProtectedString())
+
+
+    def testSingleton(self):
+        derived2 = cppLearnPyLib.Derived.getInstance()
+        self.assertEqual(id(self.derived), id(derived2))
+
 
 if __name__ == '__main__':
     print(cppLearnPyLib.the_answer)
     print(cppLearnPyLib.what)
-    base = cppLearnPyLib.Base()
-    print(base.m_public_string)
-    print(base.getProtectedString())
 
-    derived = cppLearnPyLib.Derived()
+    unittest.main()
