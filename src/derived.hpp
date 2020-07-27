@@ -72,6 +72,26 @@ public:
         return lo;
     }
 
+    template <typename T>
+    static void selectionSort(T * arr, std::size_t size, bool(* const comparisonFcn)(T const &, T const &)) {
+        // Step through each element of the array
+        for (std::size_t startIndex = 0; startIndex < size; ++startIndex) {
+            // bestIndex is the index of the smallest/largest element we've encountered so far.
+            int bestIndex = startIndex;
+
+            // Look for smallest/largest element remaining in the array (starting at startIndex+1)
+            for (std::size_t currentIndex = startIndex + 1; currentIndex < size; ++currentIndex) {
+                // If the current element is smaller/larger than our previously found smallest
+                if (comparisonFcn(arr[bestIndex], arr[currentIndex])) // COMPARISON DONE HERE
+                    // This is the new smallest/largest number for this iteration
+                    bestIndex = currentIndex;
+            }
+
+            // Swap our start element with our smallest/largest element
+            std::swap(arr[startIndex], arr[bestIndex]);
+        }
+    }
+
 
 #if __cplusplus >= 201703L
     template<typename T, template<typename, typename> typename Container, typename Allocator = std::allocator<T>>

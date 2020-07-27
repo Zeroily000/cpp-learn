@@ -1,1 +1,0 @@
-add_executable(function_pointer function_pointer.cpp)
