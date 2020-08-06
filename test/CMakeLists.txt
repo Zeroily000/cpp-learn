@@ -3,6 +3,7 @@ find_package(GTest REQUIRED)
 include_directories(${PROJECT_SOURCE_DIR}/src)
 
 enable_testing()
+add_subdirectory(alias)
 add_subdirectory(2d_array)
 add_subdirectory(binary_search)
 add_subdirectory(template_template)
