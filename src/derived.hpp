@@ -91,7 +91,7 @@ public:
 #if __cplusplus >= 201703L
     template<typename T, template<typename, typename> typename Container, typename Allocator = std::allocator<T>>
 #else
-    template<typename T, template<typename, typename> class Container, typename T, typename Allocator = std::allocator<T>>
+    template<typename T, template<typename, typename> class Container, typename Allocator = std::allocator<T>>
 #endif
     static typename Container<T, Allocator>::iterator beginItr(Container<T, Allocator> c) {
         return c.begin();

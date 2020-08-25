@@ -11,7 +11,7 @@ Derived::~Derived() {
 }
 
 Derived & Derived::getInstance() {
-    static Derived instance{Derived()};
+    static Derived instance;
     return instance;
 }
 
