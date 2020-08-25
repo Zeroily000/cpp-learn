@@ -1,6 +1,5 @@
 #include <boost/core/demangle.hpp>
 #include <gtest/gtest.h>
-#include "derived.hpp"
 
 /**
  * @brief The number-sign or "stringizing" operator (#) converts macro parameters to string literals without expanding
@@ -15,6 +14,11 @@
  *       for example, the quotation mark (") or backslash (\) character, the necessary escape backslash is automatically
  *       inserted before the character.
  */
+
+#define F abc
+#define B def
+#define FB(arg) #arg
+#define FB1(arg) FB(arg)
 
 
 TEST(CPP_LEARN, stringizing) {

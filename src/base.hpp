@@ -16,12 +16,16 @@ public:
     Base & operator=(Base && other) noexcept;
 
     std::string getProtectedString() const;
+    std::string getPrivateString() const;
 
     std::string Base::* m_mptr;
     std::string m_public_string;
 
 protected:
     std::string m_protected_string;
+
+private:
+    std::string m_private_string;
 };
 }
 #endif //BASE_HPP
