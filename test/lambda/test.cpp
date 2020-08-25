@@ -1,10 +1,11 @@
 #include <iostream>
 #include <unordered_map>
 #include <queue>
-#include <typeinfo>
 #include <boost/core/demangle.hpp>
+#include <gtest/gtest.h>
 
-int main(int argc, char** argv) {
+
+TEST(LAMBDA, priority_queue) {
     std::unordered_map<std::string, int> indegree{{"1", 1}, {"0", 0}, {"3", 3}, {"2", 2}};
 
     auto comp = [](std::pair<std::string, int> const & p1, std::pair<std::string, int> const & p2) {
@@ -18,5 +19,11 @@ int main(int argc, char** argv) {
         std::cout << min_heap.top().first << ": " << min_heap.top().second << std::endl;
         min_heap.pop();
     }
-    return 0;
+    SUCCEED();
+}
+
+
+int main(int argc, char** argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
