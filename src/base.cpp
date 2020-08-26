@@ -35,6 +35,7 @@ cpplearn::Base & cpplearn::Base::operator=(Base const & other) {
         m_mptr = other.m_mptr;
         m_public_string = other.m_public_string;
         m_protected_string = other.m_protected_string;
+        m_private_string = other.m_private_string;
     }
     return *this;
 }
@@ -44,6 +45,7 @@ cpplearn::Base & cpplearn::Base::operator=(Base && other) noexcept {
         m_mptr = other.m_mptr;
         m_public_string = std::move(other.m_public_string);
         m_protected_string = std::move(m_protected_string);
+        m_private_string = std::move(m_private_string);
     }
     return *this;
 }

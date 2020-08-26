@@ -3,7 +3,6 @@ project(cpp_learn)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_subdirectory(template_function)
 add_subdirectory(std_functional)
 add_subdirectory(std_bind)
 add_subdirectory(std_ostream)
