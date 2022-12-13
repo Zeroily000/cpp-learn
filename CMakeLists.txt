@@ -10,4 +10,4 @@ add_subdirectory(std_equal_range)
 
 add_subdirectory(src)
 add_subdirectory(python)
-add_subdirectory(test)
+add_subdirectory(tests)

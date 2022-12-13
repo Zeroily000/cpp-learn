@@ -72,7 +72,7 @@ public:
         // Step through each element of the array
         for (std::size_t startIndex = 0; startIndex < size; ++startIndex) {
             // bestIndex is the index of the smallest/largest element we've encountered so far.
-            int bestIndex = startIndex;
+            std::size_t bestIndex = startIndex;
 
             // Look for smallest/largest element remaining in the array (starting at startIndex+1)
             for (std::size_t currentIndex = startIndex + 1; currentIndex < size; ++currentIndex) {
