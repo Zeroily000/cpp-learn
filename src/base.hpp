@@ -15,8 +15,8 @@ public:
     Base & operator=(Base const & other);
     Base & operator=(Base && other) noexcept;
 
-    std::string getProtectedString() const;
-    std::string getPrivateString() const;
+    std::string GetProtectedString() const;
+    std::string GetPrivateString() const;
 
     std::string Base::* m_mptr;
     std::string m_public_string;

@@ -41,9 +41,9 @@ cpplearn::Base & cpplearn::Base::operator=(Base && other) noexcept {
   return *this;
 }
 
-std::string cpplearn::Base::getProtectedString() const {
+std::string cpplearn::Base::GetProtectedString() const {
   return m_protected_string;
 }
-std::string cpplearn::Base::getPrivateString() const {
+std::string cpplearn::Base::GetPrivateString() const {
   return m_private_string;
 }

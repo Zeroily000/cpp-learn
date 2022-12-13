@@ -8,16 +8,16 @@ import cppLearnPyLib
 class TestCppLearn(unittest.TestCase):
     def setUp(self):
         self.base = cppLearnPyLib.Base()
-        self.derived = cppLearnPyLib.Derived.getInstance()
+        self.derived = cppLearnPyLib.Derived.get_instance()
 
 
     def testInheritance(self):
         self.assertEqual(self.base.m_public_string, self.derived.m_public_string)
-        self.assertEqual(self.base.getProtectedString(), self.derived.getProtectedString())
+        self.assertEqual(self.base.get_protected_string(), self.derived.get_protected_string())
 
 
     def testSingleton(self):
-        derived2 = cppLearnPyLib.Derived.getInstance()
+        derived2 = cppLearnPyLib.Derived.get_instance()
         self.assertEqual(id(self.derived), id(derived2))
 
 

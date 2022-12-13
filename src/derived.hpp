@@ -12,7 +12,7 @@ namespace cpplearn {
 
 class Derived : public Base {
  public:
-  static Derived & getInstance();
+  static Derived & GetInstance();
   ~Derived() override;
 
   // Deleted definition must be first declaration

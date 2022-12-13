@@ -14,11 +14,11 @@ TEST(CPP_LEARN, function_wrapper) {
   std::function<void(cpplearn::Derived const &, int, char)> wrapper2{&cpplearn::Derived::Print<int>};
 
   // Store a call to a member function and object ptr
-  std::function<void(int)> wrapper3{std::bind(&cpplearn::Derived::Print<int>, &cpplearn::Derived::getInstance(), std::placeholders::_1, '\n')};
+  std::function<void(int)> wrapper3{std::bind(&cpplearn::Derived::Print<int>, &cpplearn::Derived::GetInstance(), std::placeholders::_1, '\n')};
 
   // Evaluate
   wrapper1(1);
-  wrapper2(cpplearn::Derived::getInstance(), 2, '\n');
+  wrapper2(cpplearn::Derived::GetInstance(), 2, '\n');
   wrapper3(3);
   ASSERT_EQ(::testing::internal::GetCapturedStdout(), "1\n2\n3\n");
 }

@@ -6,9 +6,9 @@ Derived::Derived() = default;
 
 Derived::~Derived() = default;
 
-Derived & Derived::getInstance() {
-    static Derived instance;
-    return instance;
+Derived & Derived::GetInstance() {
+  static Derived instance;
+  return instance;
 }
 
 }

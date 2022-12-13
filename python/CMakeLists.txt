@@ -7,8 +7,8 @@ target_include_directories(cppLearnPyLib PRIVATE ${PROJECT_SOURCE_DIR}/src)
 target_link_libraries(cppLearnPyLib PRIVATE cppLearnLib)
 
 set_target_properties(cppLearnPyLib PROPERTIES
-        PREFIX "${PYTHON_MODULE_PREFIX}"
-        SUFFIX "${PYTHON_MODULE_EXTENSION}"
+    PREFIX "${PYTHON_MODULE_PREFIX}"
+    SUFFIX "${PYTHON_MODULE_EXTENSION}"
 )
 
 ## Setup Clion for debug
