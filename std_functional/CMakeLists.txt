@@ -1,1 +1,0 @@
-add_executable(std_functional std_functional.cpp)

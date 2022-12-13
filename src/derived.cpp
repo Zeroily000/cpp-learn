@@ -2,13 +2,9 @@
 
 namespace cpplearn {
 
-Derived::Derived() : Base() {
-    std::cout << "Constructing Derived" << std::endl;
-}
+Derived::Derived() = default;
 
-Derived::~Derived() {
-    std::cout << "Destructing Derived" << std::endl;
-}
+Derived::~Derived() = default;
 
 Derived & Derived::getInstance() {
     static Derived instance;

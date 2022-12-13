@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+
 #include "derived.hpp"
 
 /**
@@ -12,8 +13,8 @@
 TEST(CPP_LEARN, nd_array) {
     std::size_t constexpr M{2}, N{3};
     int constexpr arr[M][N] = {{1,2,3}, {4,5,6}};
-    cpplearn::Derived::print2dArray<int, N>((int *)arr);
-    cpplearn::Derived::print2dArray<int, M>(arr);
+    cpplearn::Derived::Print2dArray<int, N>((int *)arr);
+    cpplearn::Derived::Print2dArray<int, M>(arr);
     SUCCEED();
 }
 
