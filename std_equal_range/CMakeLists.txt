@@ -1,1 +1,0 @@
-add_executable(std_equal_range std_equal_range.cpp)

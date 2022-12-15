@@ -4,7 +4,6 @@ project(cpp_learn)
 set(CMAKE_CXX_STANDARD 20)
 
 add_subdirectory(std_ostream)
-add_subdirectory(std_equal_range)
 
 add_subdirectory(src)
 add_subdirectory(python)
