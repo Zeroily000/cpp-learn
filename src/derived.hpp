@@ -1,14 +1,12 @@
+#pragma once
 #ifndef DERIVED_HPP
 #define DERIVED_HPP
-
-//#include <cstddef> // std::size_t
 #include <iostream>
 #include <vector>
 
 #include "base.hpp"
 
 namespace cpplearn {
-
 
 class Derived : public Base {
  public:
